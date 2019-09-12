@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardImg, CardText,CardBody, CardTitle} from 'reactstrap';
 
-const renderDish = (dish) => {
+const RenderDish = ({dish}) => {
     return(
         <Card>
             <CardImg top src={dish.image} alt={dish.name}/>
@@ -15,7 +15,7 @@ const renderDish = (dish) => {
     )
 }
 
-const renderComments = (comments) => {
+const RenderComments = ({comments}) => {
     if(comments !== undefined){
         return(
             <div>
@@ -43,10 +43,10 @@ const Dishdetail = props => {
                 <div className="container">
                 <div className="row">
                        <div className="col-12 col-md-5 m-1">
-                          {renderDish(props.dish)}
+                          <RenderDish dish={props.dish}/>
                        </div>
                     <div className="col-12 col-md-5 m-1">
-                          {renderComments(props.dish.comments)}
+                          <RenderComments comments={props.dish.comments}/>
                     </div>
                   </div>
                 </div>
